@@ -1,26 +1,26 @@
 pipeline {
 	agent any
 	tools {
-    	maven 'local-mvn'
+    		maven 'local-mvn'
 	}
 	stages {
     	
-    	stage('Build') {
-        	steps {
-        	sh "mvn compile"  	 
-        	}
-    	}
+    		stage('Build') {
+        		steps {
+        			sh "mvn compile"  	 
+			}
+    		}
     	
-    	stage("Unit test") {          	 
-        	steps {  	 
-            	sh "mvn test"
-        	}
-    	}
+    		stage("Unit test") {          	 
+        		steps {  	 
+            			sh "mvn test"
+        		}
+    		}
     	
-       	stage("Package") {          	 
-        	steps {  	 
-            	sh "mvn package"          	 
-        	}
-       	}
-}
+       		stage("Package") {          	 
+        		steps {  	 
+            			sh "mvn package"          	 
+        		}
+       		}
+	}
 }
